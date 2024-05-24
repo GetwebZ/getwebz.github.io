@@ -1,0 +1,197 @@
+/*
+
+    Theme name: Studio M4
+
+    Version:  1.1   
+    
+    author: Krishnadas Vijayan
+
+*/
+
+/*font-family: 'Roboto', sans-serif;*/
+
+
+.disableIt {
+    background: #d4d0d0 !important;
+    transition: all .3s;
+    pointer-events: none;
+    color: #928c8c !important;
+    border-image: linear-gradient(to right, #afa3a3, #afa3a3, #afa3a3, #afa3a3, #afa3a3) !important;
+    border-image-slice: 100% !important;
+    border-image-slice: 1 !important;
+    background: transparent !important;
+}
+
+.call-btn {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 10px;
+    bottom: 30px;
+    background: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0;
+    width: 110px;
+    height: 110px;
+    z-index: 1000;
+    
+
+}
+
+.call-btn .tada {
+    background: #0e25a7;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    animation-name: tada;
+    animation-duration: 05s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.call-btn .tada a:before {
+    font-family: FontAwesome;
+    content: "\f095";
+    font-size: 25px;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+}
+
+@keyframes tada {
+    from {
+        transform: rotate(-20deg);
+    }
+    to {
+        transform: rotate(20deg);
+    }
+}
+
+.call-btn .pulse {
+    width: 60px;
+    height: 60px;
+    background: #026680;
+    ;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    animation-name: pulse;
+    animation-duration: 05s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+    from {
+        width: 55px;
+        height: 55px;
+        margin-top: -275px;
+        margin-left: -275px;
+    }
+    to {
+        width: 60px;
+        height: 60px;
+        margin-top: -30px;
+        margin-left: -30px;
+    }
+}
+
+.call-btn .zoomIn {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #040d5f;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    animation-name: zoomIn;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        margin-left: -20px;
+    }
+    to {
+        width: 80px;
+        height: 80px;
+        margin-top: -40px;
+        margin-left: -40px;
+    }
+}
+
+@media screen and (max-width: 549px) {
+    call-btn {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.whatsapp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 25px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    -webkit-box-shadow: 0px 0px 25px -6px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 0px 25px -6px rgb(255, 255, 255);
+    box-shadow: 0px 0px 25px -6px rgb(255, 255, 255);
+    animation: effect 5s infinite ease-in;
+    z-index: 100;
+}
+
+.my-whatsapp {
+    margin-top: 16px;
+}
+
+/*.whatsapp{display:none;}*/
+
+/*.call-btn{display:none;}*/
+
+.itemw {
+    height: 280px !important;
+    vertical-align: top;
+}
+
+.sm-event-image {
+    height: auto !important;
+    object-fit: cover;
+}
+
+.call-btn .tada a {
+    font-size: 0;
+    line-height: 35px;
+}
+
+@media(min-width:1024px) {
+    section#header .container,
+    section#header-yoga-space .container {
+        width: 90% !important;
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,18 @@
+@function toRem($value) {
+    $remValue: ($value / 16) + rem;
+    @return $remValue;
+}
+@function toEm($value) {
+    $remValue: ($value / 16) + em;
+    @return $remValue;
+}
+
+@function color-primary($alpha : 1) {
+    $hslaColor: hsla(var(--color-primary), $alpha);
+    @return $hslaColor;
+}
+
+@function color-secondary($alpha : 1) {
+    $hslaColor: hsla(var(--color-secondary), $alpha);
+    @return $hslaColor;
+}
