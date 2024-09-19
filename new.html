@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Started</title>
+  <link rel="stylesheet" href="./new.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+    }
+    .formbold-main-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+      background-image: url('https://cdn.wallpapersafari.com/15/77/Unk3aX.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #000000;
+      min-height: 100vh;
+      position: relative;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .formbold-form-wrapper {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 100%;
+      transform: scale(0.95);
+      animation: formScaleIn 0.5s ease-in-out forwards;
+    }
+    @keyframes formScaleIn {
+      from { transform: scale(0.95); }
+      to { transform: scale(1); }
+    }
+    .formbold-form-input, .formbold-form-radio, .formbold-form-select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      transition: border-color 0.3s;
+    }
+    .formbold-form-input:focus {
+      border-color: #5277ff;
+      outline: none;
+    }
+    .formbold-btn {
+      background: #5277ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      width: 100%;
+      text-align: center;
+    }
+    .formbold-btn:hover {
+      background: #4057d0;
+      transform: translateY(-2px);
+    }
+    .formbold-form-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .service-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 100px;
+      border: 2px solid #5277ff;
+      color: #5277ff;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.3s;
+      animation: buttonFadeIn 0.3s ease-in-out;
+    }
+    @keyframes buttonFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .service-button.selected {
+      background: #000;
+      color: #fff;
+      border: 2px solid #000;
+    }
+    .service-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    textarea.formbold-form-input {
+      resize: vertical;
+    }
+    .formbold-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 70px;
+      width: auto;
+      animation: logoSlideIn 1s ease-in-out;
+      z-index: 10;
+    }
+    @keyframes logoSlideIn {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    .formbold-description {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: textFadeIn 0.8s ease-in-out;
+    }
+    @keyframes textFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .formbold-main-wrapper {
+        padding: 24px;
+      }
+      .formbold-form-wrapper {
+        padding: 20px;
+        max-width: 100%;
+      }
+      .service-buttons {
+        justify-content: center;
+      }
+      .service-button {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+        border-radius: 50px;
+      }
+      .formbold-btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .formbold-main-wrapper {
+        padding: 16px;
+      }
+      .formbold-form-wrapper {
+        padding: 15px;
+        max-width: 100%;
+      }
+      .formbold-logo {
+        top: 10px;
+        left: 10px;
+        height: 50px;
+      }
+      .formbold-description h2 {
+        font-size: 1.5rem;
+      }
+      .formbold-description p {
+        font-size: 0.9rem;
+      }
+      .formbold-btn {
+        padding: 10px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="formbold-main-wrapper">
+    <img src="../../2.1.png" class="formbold-logo">
+    <div class="formbold-form-wrapper">
+      <div class="formbold-description">
+        <h2>Welcome to Getwebz!</h2>
+        <p>Your one-stop solution for web design, SEO, branding, and more. Let's get started with your project today.</p>
+      </div>
+      <form action="https://formspree.io/f/xkgwpvrq" method="POST">
+        <div class="formbold-mb-5">
+          <label for="name" class="formbold-form-label">Full Name</label>
+          <input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" required />
+        </div>
+        <div class="formbold-mb-5">
+          <label for="phone" class="formbold-form-label">Phone Number</label>
+          <input type="text" name="phone" id="phone" placeholder="Enter your phone number" class="formbold-form-input" required />
+        </div>
+        <div class="formbold-mb-5">
+          <label for="email" class="formbold-form-label">Email Address</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input" required />
+        </div>
+        <div class="flex flex-wrap formbold--mx-3">
+          <div class="w-full sm:w-half formbold-px-3">
+            <div class="formbold-mb-5 w-full">
+              <label for="date" class="formbold-form-label">Preferred Date</label>
+              <input type="date" name="date" id="date" class="formbold-form-input" required />
+            </div>
+          </div>
+          <div class="w-full sm:w-half formbold-px-3">
+            <div class="formbold-mb-5">
+              <label for="time" class="formbold-form-label">Preferred Time</label>
+              <input type="time" name="time" id="time" class="formbold-form-input" required />
+            </div>
+          </div>
+        </div>
+        <div class="formbold-mb-5">
+          <label class="formbold-form-label">Services Required</label>
+          <div class="service-buttons">
+            <button type="button" class="service-button" data-service="Web Design">Web Design</button>
+            <button type="button" class="service-button" data-service="SEO Optimization">SEO Optimization</button>
+            <button type="button" class="service-button" data-service="Graphic Design">Graphic Design</button>
+            <button type="button" class="service-button" data-service="Hosting">Hosting</button>
+            <button type="button" class="service-button" data-service="Branding">Branding</button>
+            <button type="button" class="service-button" data-service="College Projects">College Projects</button>
+            <button type="button" class="service-button" data-service="Ecommerce Solutions">Ecommerce Solutions</button>
+            <button type="button" class="service-button" data-service="Social Media Marketing">Social Media Marketing</button>
+          </div>
+          <input type="hidden" name="selected-services" id="selected-services">
+        </div>
+        <div class="formbold-mb-5">
+          <label for="additional-info" class="formbold-form-label">Additional Information</label>
+          <textarea name="additional-info" id="additional-info" placeholder="Provide any additional details or requirements" class="formbold-form-input" rows="4"></textarea>
+        </div>
+        <div class="formbold-mb-5">
+          <label for="budget" class="formbold-form-label">Budget Range (₹)</label>
+          <input type="number" name="budget" id="budget" placeholder="Enter your budget range" class="formbold-form-input" min="5000" max="1000000" step="1000" />
+        </div>
+        <div class="formbold-mb-5">
+          <label class="formbold-form-label">Preferred Communication Method</label>
+          <div class="flex flex-wrap formbold--mx-3">
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <input type="radio" name="communication" id="comm-email" value="Email" class="formbold-form-radio" />
+                <label for="comm-email" class="formbold-form-label">Email</label>
+              </div>
+            </div>
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <input type="radio" name="communication" id="comm-phone" value="Phone" class="formbold-form-radio" />
+                <label for="comm-phone" class="formbold-form-label">Phone</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="formbold-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.service-button').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('selected');
+        updateSelectedServices();
+      });
+    });
+    function updateSelectedServices() {
+      const selectedServices = Array.from(document.querySelectorAll('.service-button.selected'))
+        .map(button => button.getAttribute('data-service'))
+        .join(', ');
+      document.getElementById('selected-services').value = selectedServices;
+    }
+  </script>
+</body>
+</html>

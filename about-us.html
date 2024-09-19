@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About US | GetwebZ</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Source+Sans+Pro:400,400i,600,600i" rel="stylesheet">
+  <link rel="stylesheet" href="style-main.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- <link rel="shortcut icon" href="./image/favcon/favcon.png" width="50px" type="image/x-icon"> -->
+  <link rel="shortcut icon" href="https://onedrive.live.com/embed?resid=E3C63FF488C4719D%21112&authkey=%21AEg_vNQISYc0J98&width=526&height=474">
+
+<style>
+  /* Slider Container */
+.slider {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+.slide-track {
+    display: flex;
+    width: 100%;
+    animation: scroll 20s linear infinite;
+}
+
+.slide {
+    flex: 0 0 auto;
+    width: 250px; /* Width of each slide */
+    margin: 0 10px; /* Space between slides */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Keyframes for scrolling effect */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+ /* grids 4 img  */
+@layer reset {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  :where(:not(dialog)) {
+    margin: 0;
+  }
+}
+
+@layer demo {
+  :root {
+    color-scheme: dark;
+    --nav-block-size: 74px;
+  }
+}
+
+@layer components.collections {
+  .section {
+    background-color: black;
+    display: grid;
+    inline-size: 100%;
+    min-block-size: max(600px, calc(100dvb - var(--nav-block-size)));
+    padding-block-end: 0.75rem;
+    padding-inline: 0.75rem;
+    place-items: center;
+    position: relative;
+  }
+
+  .cards {
+    background-color: black;
+    block-size: 100%;
+    display: grid;
+    gap: 1rem;
+    inline-size: 100%;
+
+    @media (width > 1024px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .card {
+    container-type: size;
+    inline-size: 100%;
+    block-size: 100%;
+    text-decoration: none;
+    min-block-size: 280px;
+    position: relative;
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      inset: 0;
+      mix-blend-mode: multiply;
+      opacity: 0;
+      position: absolute;
+      transition: opacity 0.2s ease;
+    }
+  }
+
+  .card-1::after {
+    background-color: hsl(343, 98%, 52%);
+  }
+
+  .card-2::after {
+    background-color: hsl(199, 100%, 38%);
+  }
+
+  .card-3::after {
+    background-color: hsl(119, 59%, 64%);
+  }
+
+  .card-4::after {
+    background-color: hsl(49, 83%, 69%);
+  }
+
+  .visual {
+    background-color: black;
+    block-size: 100%;
+    display: grid;
+    inline-size: 100%;
+    overflow: hidden;
+    place-items: center;
+
+    >* {
+      grid-area: 1/1;
+    }
+  }
+
+  .card-img {
+    block-size: 100cqb;
+    inline-size: 100cqi;
+    border-radius: inherit;
+    display: block;
+    background: conic-gradient(from 90deg at 50% 0%, #111, 50%, #222, #111);
+    filter: grayscale();
+    object-fit: cover;
+  }
+
+  .figcaption {
+    z-index: 2;
+    color: white;
+    font: 400 8cqi / normal system-ui, sans-serif;
+  }
+}
+
+
+
+/* grids 4 img ends */
+
+
+
+/* color boxes */
+.site {
+  display: grid;
+  grid-template-columns:1fr;
+  grid-template-areas:
+    "title"
+    "main"
+    "masthead" 
+    "sidebar" 
+    "footer";
+  grid-gap: 1em;
+  
+ }
+
+@media screen and (min-width: 600px) {
+.site {
+  
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 3fr;
+  grid-template-areas:
+    "title title"
+    "main masthead"
+    "main sidebar"
+    "footer footer";
+  }
+}
+
+/*comment to see impact on layout */
+.masthead {
+  grid-area: masthead;
+  
+}
+
+.page-title {
+  grid-area: title;
+}
+
+.main-content {
+  grid-area: main;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+
+.footer-content {
+  grid-area: footer;
+}
+
+
+
+
+/* style main start --------------------------------------------------------------------------------------------------------*/
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body {
+    margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 1.5em;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    display: inline-block;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    color: #ddca7e;
+    background: #282c34;
+    padding: .5em .8em;
+    border-radius: .2em;
+}
+
+code,
+kbd,
+tt,
+var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+/* Global layouts */
+@media screen and (min-width: 700px) {
+    .two-column {
+        column-count: 2;
+        column-gap: 2.4em;
+    }
+}
+
+/* Global buttons */
+.content-button {
+    padding: .5em 1em;
+    border: 3px solid #B51C35;
+    /*border-radius: 10px;*/
+    font-weight: 600;
+}
+
+a.content-button {
+    color: black;
+    text-decoration: none;
+}
+
+a.content-button:focus,
+a.content-button:hover {
+    background: #B51C35;
+    color: #FFFCED;
+}
+
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+
+.site {
+    margin: 1em;
+}
+
+.masthead,
+.page-title,
+.main-content,
+.sidebar,
+.footer-content {
+/* 	margin-bottom: 1em; */
+    padding: 1em;
+    color: white;
+
+}
+
+
+
+.masthead {
+    background-color: #7f007fc6;
+}
+
+.page-title {
+    background-color: #4abbe7;
+}
+
+.main-content {
+    background-color: #00610fdf;
+}
+
+.sidebar {
+    background-color: #CD7F32;
+}
+
+.footer-content {
+    background-color: #0265c0;
+} 
+
+ /* color boxes */
+
+
+
+
+
+
+
+/* Main */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+:root {
+    --primary: #6f84cf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #fff;
+    min-height: 100vh;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#header .logo {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: var(--primary);
+    border-radius: 20px;
+}
+
+#header ul li a:hover,
+#header ul li a.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, var(--primary), transparent);
+    z-index: 10;
+}
+
+section img {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section #text {
+    position: absolute;
+    color: var(--primary);
+    font-size: 10vw;
+    text-align: center;
+    line-height: .55em;
+    font-family: 'Rancho', cursive;
+    transform: translatey(-50%);
+}
+
+section #text span {
+    font-size: .20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    background: #fff;
+    color: var(--primary);
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translatey(100px);
+}
+
+.sec {
+    position: relative;
+    padding: 100px;
+    background: var(--primary);
+}
+
+.sec h2 {
+    font-size: 3.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec p {
+    font-size: 1em;
+    color: #fff;
+}
+
+
+/*main ends*/
+
+
+
+
+
+/* footer*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #5277ff;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+
+
+
+/* foooter ends */
+
+ </style>
+</head>
+<body>
+    
+    
+    <Section>
+        <h2 id="text"><span style="color: #000000;font-size:50%;">Getweb<a style="color: #5277ff;">Z</a> </span><br>About Us</h2>
+        <!-- <img src="./image/logo-1.png" height="50px" w
+          idth="100px"> -->
+        
+        <img src="https://user-images.githubusercontent.com/65358991/170092504-132fa547-5ced-40e5-ab64-ded61518fac2.png" id="bird1">
+        <img src="https://user-images.githubusercontent.com/65358991/170092542-9747edcc-fb51-4e21-aaf5-a61119393618.png" id="bird2">
+        <img src="https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png" id="forest">
+        
+        <!-- <a href="#" id="btn">Explore</a>
+         -->
+        <img src="https://user-images.githubusercontent.com/65358991/170092605-eada6510-d556-45cc-b7fa-9e4d1d258d26.png" id="rocks">
+        <img src="https://user-images.githubusercontent.com/65358991/170092616-5a70c4af-2eed-496f-bde9-b5fcc7142a31.png" id="water">
+    </Section>
+
+    <div class="sec">
+     
+      <h2>Who we are?</h2>
+      </div>
+    
+    <div class="site">
+      <!-- <a class="skip-link screen-reader-text" href="#content">Skip to content</a> -->
+  
+      <header class="masthead">
+          <!-- <code class="identifier"><pre>.masthead</pre></code> -->
+          <h2> we're pioneering digital innovation to transform your online presence and propel your brand to new heights
+          </h2>
+      </header><!-- .masthead -->
+  
+      <div class="page-title">
+          <!-- <code class="identifier"><pre>.page-title</pre></code> -->
+          <h1>Grow Your Business Online </h1>
+      </div><!-- .page-title -->
+  
+      <main id="content" class="main-content">
+          <!-- <code class="identifier"><pre>.main-content</pre></code> -->
+          <h2>what we do?</h2>
+          <p>At Getwebz, we're your one-stop destination for all things digital. From comprehensive digital marketing services to expert web development, SEO strategies, and innovative design solutions, we've got the expertise to elevate your online presence. Whether you're a business aiming to boost your visibility or a student seeking dynamic college projects, our team is equipped to deliver tailored solutions to meet your unique needs. Additionally, with our reliable hosting services, you can trust us to keep your online assets running smoothly. With a focus on creativity, functionality, and cutting-edge technology, we're committed to helping you achieve success in the digital realm.</p>
+      <p>We goes beyond mere website development, offering a spectrum of project solutions to meet your needs. Whether you're a student seeking innovative college projects in AI, ML, DL, or web development, or a business in need of a dynamic online presence, we've got you covered. Our team specializes in delivering user-friendly interfaces and cutting-edge digital solutions that stand out in today's competitive landscape. From designing captivating websites to developing custom AI applications, we're dedicated to bringing your ideas to life with creativity and expertise. With Getwebz, your project aspirations are our priority.</p>
+    <p>innovation and creativity are at the heart of everything we do. We're committed to staying ahead of the curve and leveraging the latest technologies to deliver cutting-edge solutions that drive results. With our expertise and passion for digital excellence, we're here to help you navigate the complexities of the digital landscape and achieve your goals with confidence.</p>
+    </main><!-- #content .main-content -->
+  
+      <aside class="sidebar">
+          <!-- <code class="identifier"><pre>.sidebar</pre></code> -->
+          <!-- <h2>Sidebar</h2> -->
+          <p>At Getwebz, we're not just another web development agency; we're your digital partners in success. With a blend of creativity, technical expertise, and strategic thinking, we craft bespoke digital solutions tailored to your unique needs. Our mission is simple: to empower businesses of all sizes to thrive in the digital landscape.
+</p>
+          <p> With a team of seasoned developers, designers, and digital marketers, we bring your vision to life with precision and passion. Whether you're launching a new website, optimizing your online presence, or delving into the world of e-commerce, we're here to guide you every step of the way.
+          </p> 
+         <p>   At Getwebz, innovation is at the core of everything we do. We stay ahead of the curve, leveraging the latest technologies and trends to ensure your digital presence stands out in a crowded online world. From stunning website designs to robust e-commerce solutions, we're committed to helping you achieve your digital goals and drive real results.</p>
+        </p><p>"Transforming Visions into Digital Realities"
+        </p>
+
+
+
+      </aside><!-- .sidebar -->
+  
+       <footer class="footer-content">
+          <!-- <code class="identifier"><pre>.footer-content</pre></code>-->
+          <h2 style="text-align: center;">Empowering Your Digital Presence, Unlocking Exclusive Offers for Your Digital Journey</h2> 
+          <p ><span class="bg"></span></p>
+      </footer> 
+      <!-- .footer-content --></div>
+
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        let header = document.getElementById('header');
+        
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            
+            text.style.top = 50 + value * -.1 + '%';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * 2 + 'px';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -.12 + 'px';
+            forest.style.top = value * .25 + 'px';
+            header.style.top = value * .5 + 'px';
+        })
+    </script>
+
+
+<!-- Slider Section -->
+<div class="slider" style="background-color: white;">
+  <div class="slide-track">
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="Brand 1" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="Brand 2" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="Brand 3" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="Brand 4" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="Brand 5" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="Brand 6" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="Brand 7" />
+      </div>
+      <!-- Repeat slides to create an infinite loop effect -->
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="Brand 1" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="Brand 2" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="Brand 3" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="Brand 4" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="Brand 5" />
+      </div>
+      <div class="slide">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="Brand 6" />
+      </div>
+  </div>
+</div>
+
+
+<!-- <section > -->
+    <div class="cards">
+      <a href="#" class="card card-1">
+        <figure class="visual">
+          <img
+            class="card-img"
+            src="https://raw.githubusercontent.com/mobalti/ui/main/cards-01/images/img-1.avif"
+            alt="Person with a game controller in hand"
+          />
+          <figcaption class="figcaption">Exclusive Peek</figcaption>
+        </figure>
+      </a>
+      <a href="#" class="card card-2">
+        <figure class="visual">
+          <img
+            class="card-img"
+            src="https://raw.githubusercontent.com/mobalti/ui/main/cards-01/images/img-2.avif"
+            alt="Person with curly hair in neon lighting"
+          />
+          <figcaption class="figcaption">Prime Selection</figcaption>
+        </figure>
+      </a>
+      <a href="#" class="card card-3">
+        <figure class="visual">
+          <img
+            class="card-img"
+            src="https://raw.githubusercontent.com/mobalti/ui/main/cards-01/images/img-3.avif"
+            alt="Person in vibrant neon lighting with abstract shapes"
+          />
+          <figcaption class="figcaption">Latest Launches</figcaption>
+        </figure>
+      </a>
+      <a href="#" class="card card-4">
+        <figure class="visual">
+          <img
+            class="card-img"
+            src="https://raw.githubusercontent.com/mobalti/ui/main/cards-01/images/img-4.avif"
+            alt="Person wearing a virtual reality headset in a blue-lit room"
+          />
+          <figcaption class="figcaption">Next Gen</figcaption>
+        </figure>
+      </a>
+    </div>
+ <!-- contact us starts -->
+  
+     <!--===== FOOTER =====-->
+
+
+
+     <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Links</h4>
+            <ul>
+              <li class="footer__block__list__item">
+                <a href="index.html" class="footer__block__list__link">Home</a>
+              </li>
+              <li class="footer__block__list__item">
+                <a href="portfolio.html" class="footer__block__list__link">Our Work</a>
+              </li>
+              <li class="footer__block__list__item">
+                <a href="projects.html" class="footer__block__list__link">What We Offer</a>
+              </li>
+                               <li class="footer__block__list__item">
+                <a href="service.html" class="footer__block__list__link">Innovative Solutions</a>
+              </li>
+                      </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Services</h4>
+            <ul>
+              <li class="footer__block__list__item">
+                <a href="web-design.html" class="footer__block__list__link">Web Designing</a>
+              </li>
+              <li class="footer__block__list__item">
+                <a href="graphic-design.html" class="footer__block__list__link">Designing</a>
+              </li>
+                              <li class="footer__block__list__item">
+                <a href="college-projects.html" class="footer__block__list__link">College Projects</a>
+              </li>
+              <li class="footer__block__list__item">
+                <a href="web-hosting.html" class="footer__block__list__link">Hosting</a>
+              </li>
+                              <li class="footer__block__list__item">
+                <a href="Branding.html" class="footer__block__list__link">Branding</a>
+              </li>
+                              <li class="footer__block__list__item">
+                <a href="Seo.html" class="footer__block__list__link">SEO</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Policies</h4>
+            <ul>
+              <li class="footer__block__list__item">
+                <a href="terms-and-condition.html" class="footer__block__list__link">terms of use</a>
+              </li>
+              <li class="footer__block__list__item">
+                <a href="privacy-policy.html" class="footer__block__list__link">privacy policy</a>
+              </li>
+              <li class="footer__block__list__item">
+                <a href="cookies.html" class="footer__block__list__link">cookie policy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=61553398483031"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/getwebz/"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/getwebz"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://twitter.com/GetwebZ"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+   </footer>
+ 
+   <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+
+<!-- </footer> -->
+
+
+</body>
+</html>
